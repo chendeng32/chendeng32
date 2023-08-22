@@ -1,0 +1,15 @@
+export const completeConfig =
+(textDocPosition: TextDocumentPositionParams) =>
+(configItem: CompletionItem) => {
+	doComplete(configItem, textDocPosition)
+	return configItem
+}
+
+export const completeConfigList = 
+(textDocPosition: TextDocumentPositionParams) =>
+(configItemList: CompletionItem[]) => {
+	for (let configItem of configItemList) {
+		doComplete(configItem, textDocPosition)
+	}
+	return configItemList
+}
